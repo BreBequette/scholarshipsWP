@@ -158,8 +158,8 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 								[
 									'id'        => 'job-categories',
 									'type'      => 'checkbox',
-									'label'     => __( 'Job Categories', 'jobboardwp' ),
-									'helptip'   => __( 'Enable categories for jobs.', 'jobboardwp' ),
+									'label'     => __( 'Scholarship Categories', 'jobboardwp' ),
+									'helptip'   => __( 'Enable categories for scholarships.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'job-template',

@@ -17,7 +17,24 @@
 						<input type="search" class="jb-search-line" placeholder="<?php esc_attr_e( 'Scholarship title, keywords, or company', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url ) ?>" aria-label="<?php esc_attr_e( 'Find Scholarships by title', 'jobboardwp' ) ?>" speech />
 					</label>
 
-					<?php
+
+					<?php $types = get_terms( [
+                    				'taxonomy'      => 'jb-job-type',
+                    				'hide_empty'    => false,
+                    			] );
+
+                    			if ( ! empty( $types ) ) { ?>
+
+                    				<label>
+                    					<select class="jb-job-type-filter">
+                    						<option value="" <?php selected( $job_type, '' ) ?>><?php esc_attr_e( 'Select scholarship type', 'jobboardwp' ); ?></option>
+                    						<?php foreach ( $types as $type ) { ?>
+                    							<option value="<?php echo esc_attr( $type->term_id ) ?>" <?php selected( $job_type, $type->term_id ) ?>><?php echo esc_html( $type->name ) ?></option>
+                    						<?php } ?>
+                    					</select>
+                    				</label>
+
+                    			<?php }
 				}
 
 				if ( ! $jb_jobs_search_bar['hide-location-search'] ) {
@@ -49,7 +66,7 @@
 					</label>
 				<?php } ?>
 
-				<input type="button" class="jb-do-search jb-button" value="<?php esc_attr_e( 'Find Jobs', 'jobboardwp' ); ?>" />
+				<input type="button" class="jb-do-search jb-button" value="<?php esc_attr_e( 'Find Scholarships', 'jobboardwp' ); ?>" />
 			</div>
 		</div>
 

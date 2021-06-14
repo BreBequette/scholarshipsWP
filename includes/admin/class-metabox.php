@@ -150,7 +150,7 @@ if ( ! class_exists( 'jb\admin\Metabox' ) ) {
 		 * @since 1.0
 		 */
 		function add_metabox_job() {
-			add_meta_box( 'jb-job-data', __( 'Job Data', 'jobboardwp' ), [ &$this, 'load_metabox_job' ], 'jb-job', 'normal', 'core' );
+			add_meta_box( 'jb-job-data', __( 'Scholarship Data', 'jobboardwp' ), [ &$this, 'load_metabox_job' ], 'jb-job', 'normal', 'core' );
 		}
 
 

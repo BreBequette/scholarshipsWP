@@ -232,7 +232,7 @@
 				'fields'    => [
 					[
 						'type'      => 'text',
-						'label'     => __( 'Job Title', 'jobboardwp' ),
+						'label'     => __( 'Scholarship Title', 'jobboardwp' ),
 						'id'        => 'job_title',
 						'required'  => true,
 						'value'     => $job_title,
