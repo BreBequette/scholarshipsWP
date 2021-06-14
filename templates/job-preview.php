@@ -42,7 +42,7 @@ if ( ! empty( $jb_job_preview['job_id'] ) ) { ?>
 			],
 			'job-publish' => [
 				'type'  => 'submit',
-				'label' => __( 'Submit Job', 'jobboardwp' ),
+				'label' => __( 'Submit Scholarship', 'jobboardwp' ),
 				'data'  => [
 					'action'    => 'publish',
 				],

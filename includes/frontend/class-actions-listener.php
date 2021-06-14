@@ -286,7 +286,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 						     ( $_POST['jb-job-submission-step'] == 'draft' && ! is_user_logged_in() &&
 						       ! JB()->options()->get( 'account-creation' ) && ! JB()->options()->get( 'account-required' ) )
 							) {
-							$posting_form->add_error( 'global', __( 'You cannot save draft jobs, Please try again', 'jobboardwp' ) );
+							$posting_form->add_error( 'global', __( 'You cannot save draft scholarships, Please try again', 'jobboardwp' ) );
 						}
 
 						// register user if it's needed
@@ -299,20 +299,20 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 						$company_name = '';
 
 						if ( empty( $_POST['job_title'] ) ) {
-							$posting_form->add_error( 'job_title', __( 'Job title cannot be empty', 'jobboardwp' ) );
+							$posting_form->add_error( 'job_title', __( 'Scholarship title cannot be empty', 'jobboardwp' ) );
 						} else {
 							$title = sanitize_text_field( $_POST['job_title'] );
 							if ( empty( $title ) ) {
-								$posting_form->add_error( 'job_title', __( 'Job title cannot be empty', 'jobboardwp' ) );
+								$posting_form->add_error( 'job_title', __( 'Scholarship title cannot be empty', 'jobboardwp' ) );
 							}
 						}
 
 						if ( empty( $_POST['job_description'] ) ) {
-							$posting_form->add_error( 'job_description', __( 'Job description cannot be empty', 'jobboardwp' ) );
+							$posting_form->add_error( 'job_description', __( 'Scholarship description cannot be empty', 'jobboardwp' ) );
 						} else {
 							$content = wp_kses_post( $_POST['job_description'] );
 							if ( empty( $content ) ) {
-								$posting_form->add_error( 'job_description', __( 'Job description cannot be empty', 'jobboardwp' ) );
+								$posting_form->add_error( 'job_description', __( 'Scholarship description cannot be empty', 'jobboardwp' ) );
 							}
 						}
 
@@ -325,7 +325,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 
 								case 'email':
 									if ( ! is_email( $app_contact ) ) {
-										$posting_form->add_error( 'job_application', __( 'Job application must be an email address', 'jobboardwp' ) );
+										$posting_form->add_error( 'job_application', __( 'Scholarship application must be an email address', 'jobboardwp' ) );
 									}
 
 									$app_contact = sanitize_email( $app_contact );
@@ -336,7 +336,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 										$app_contact = 'http://' . $app_contact;
 									}
 									if ( ! filter_var( $app_contact, FILTER_VALIDATE_URL ) ) {
-										$posting_form->add_error( 'job_application', __( 'Job application must be an URL', 'jobboardwp' ) );
+										$posting_form->add_error( 'job_application', __( 'Scholarship application must be an URL', 'jobboardwp' ) );
 									}
 									break;
 								default:
@@ -346,7 +346,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 											$app_contact = 'http://' . $app_contact;
 										}
 										if ( ! filter_var( $app_contact, FILTER_VALIDATE_URL ) ) {
-											$posting_form->add_error( 'job_application', __( 'Job application must be an email address or URL', 'jobboardwp' ) );
+											$posting_form->add_error( 'job_application', __( 'Scholarship application must be an email address or URL', 'jobboardwp' ) );
 										}
 									} else {
 										$app_contact = sanitize_email( $app_contact );
@@ -359,12 +359,12 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 						$location_type = '0';
 						$location = '';
 						if ( ! isset( $_POST['job_location_type'] ) ) {
-							$posting_form->add_error( 'job_location', __( 'Job location type invalid', 'jobboardwp' ) );
+							$posting_form->add_error( 'job_location', __( 'Scholarship location type invalid', 'jobboardwp' ) );
 						} else {
 							$location_type = sanitize_text_field( $_POST['job_location_type'] );
 							if ( $location_type === '0' ) {
 								if ( empty( $_POST['job_location'] ) ) {
-									$posting_form->add_error( 'job_location', __( 'Location for onsite job is required', 'jobboardwp' ) );
+									$posting_form->add_error( 'job_location', __( 'Location for onsite scholarship is required', 'jobboardwp' ) );
 								} else {
 									$location = sanitize_text_field( $_POST['job_location'] );
 								}
@@ -376,7 +376,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 
 						if ( JB()->options()->get( 'required-job-type' ) ) {
 							if ( ! isset( $_POST['job_type'] ) || empty( $_POST['job_type'] ) ) {
-								$posting_form->add_error( 'job_type', __( 'Job type is required', 'jobboardwp' ) );
+								$posting_form->add_error( 'job_type', __( 'Scholarship type is required', 'jobboardwp' ) );
 							}
 						}
 
@@ -576,7 +576,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 								$job_id = absint( $_GET['job-id'] );
 								$job = get_post( $job_id );
 								if ( is_wp_error( $job ) || empty( $job ) ) {
-									$posting_form->add_error( 'global', __( 'Wrong job', 'jobboardwp' ) );
+									$posting_form->add_error( 'global', __( 'Wrong scholarship', 'jobboardwp' ) );
 								} else {
 									$job_data['ID'] = $job_id;
 									wp_update_post( $job_data );
@@ -589,7 +589,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 							}
 
 							if ( is_wp_error( $job_id ) ) {
-								$posting_form->add_error( 'global', __( 'Job submission issue, Please try again', 'jobboardwp' ) );
+								$posting_form->add_error( 'global', __( 'Scholarship submission issue. Please try again', 'jobboardwp' ) );
 							} else {
 
 								if ( ! empty( $company_logo ) ) {

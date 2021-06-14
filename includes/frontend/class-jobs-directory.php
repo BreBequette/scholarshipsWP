@@ -49,7 +49,7 @@ if ( ! class_exists( 'jb\frontend\Jobs_Directory' ) ) {
 		 */
 		function init_variables() {
 			$this->filters = apply_filters( 'jb_jobs_directory_filters', [
-				'job_type'  => __( 'Job Type', 'jobboardwp' ),
+				'job_type'  => __( 'Scholarship Type', 'jobboardwp' ),
 				'company'   => __( 'Company', 'jobboardwp' ),
 			] );
 

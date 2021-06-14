@@ -480,18 +480,18 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 			JB()->ajax()->check_nonce( 'jb-frontend-nonce' );
 
 			if ( empty( $_POST['job_id'] ) ) {
-				wp_send_json_error( __( 'Wrong job ID.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Wrong scholarship ID.', 'jobboardwp' ) );
 			}
 
 			$job_id = absint( $_POST['job_id'] );
 
 			$job = get_post( $job_id );
 			if ( is_wp_error( $job ) || empty( $job ) ) {
-				wp_send_json_error( __( 'Wrong job.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Wrong scholarship.', 'jobboardwp' ) );
 			}
 
 			if ( get_current_user_id() != $job->post_author ) {
-				wp_send_json_error( __( 'You haven\'t ability to delete this job.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'You don\'t have the ability to delete this scholarship.', 'jobboardwp' ) );
 			}
 
 			$result = wp_delete_post( $job_id, true );
@@ -514,22 +514,22 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 			JB()->ajax()->check_nonce( 'jb-frontend-nonce' );
 
 			if ( empty( $_POST['job_id'] ) ) {
-				wp_send_json_error( __( 'Wrong job ID', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Wrong scholarship ID', 'jobboardwp' ) );
 			}
 
 			$job_id = absint( $_POST['job_id'] );
 
 			$job = get_post( $job_id );
 			if ( is_wp_error( $job ) || empty( $job ) ) {
-				wp_send_json_error( __( 'Wrong job', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Wrong scholarship', 'jobboardwp' ) );
 			}
 
 			if ( get_current_user_id() != $job->post_author ) {
-				wp_send_json_error( __( 'You haven\'t ability to fill this job.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'You don\'t have the ability to delete this scholarship..', 'jobboardwp' ) );
 			}
 
 			if ( JB()->common()->job()->is_filled( $job_id ) ) {
-				wp_send_json_error( __( 'Job is already filled.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Scholarship is already awarded.', 'jobboardwp' ) );
 			}
 
 			update_post_meta( $job_id, 'jb-is-filled', true );
@@ -558,22 +558,22 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 			JB()->ajax()->check_nonce( 'jb-frontend-nonce' );
 
 			if ( empty( $_POST['job_id'] ) ) {
-				wp_send_json_error( __( 'Wrong job ID', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Wrong scholarship ID', 'jobboardwp' ) );
 			}
 
 			$job_id = absint( $_POST['job_id'] );
 
 			$job = get_post( $job_id );
 			if ( is_wp_error( $job ) || empty( $job ) ) {
-				wp_send_json_error( __( 'Wrong job', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Wrong scholarship', 'jobboardwp' ) );
 			}
 
 			if ( get_current_user_id() != $job->post_author ) {
-				wp_send_json_error( __( 'You haven\'t ability to un-fill this job.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'You don\'t have the ability to delete this scholarship.', 'jobboardwp' ) );
 			}
 
 			if ( ! JB()->common()->job()->is_filled( $job_id ) ) {
-				wp_send_json_error( __( 'Job isn\'t filled yet.', 'jobboardwp' ) );
+				wp_send_json_error( __( 'Scholarship isn\'t awarded yet.', 'jobboardwp' ) );
 			}
 
 			update_post_meta( $job_id, 'jb-is-filled', false );
@@ -607,7 +607,7 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 				$status_label = JB()->common()->job()->get_status( $job_post->ID );
 				$status = $job_post->post_status == 'jb-preview' ? 'draft' : $job_post->post_status;
 			} else {
-				$status_label = JB()->common()->job()->is_filled( $job_post->ID ) ? __( 'Filled', 'jobboardwp' ) : __( 'Not-filled', 'jobboardwp' );
+				$status_label = JB()->common()->job()->is_filled( $job_post->ID ) ? __( 'Awarded', 'jobboardwp' ) : __( 'Not-filled', 'jobboardwp' );
 				$status = JB()->common()->job()->is_filled( $job_post->ID ) ? 'filled' : 'not-filled';
 			}
 

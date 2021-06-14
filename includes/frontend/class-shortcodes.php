@@ -60,14 +60,14 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 						case 'draft':
 						    // translators: %s: jobs dashboard page link
 							$posting_form->add_notice(
-								sprintf( __( 'Job\'s draft was saved. You could resumed it from the <a href="%s" title="Job Dashboard">job dashboard</a>', 'jobboardwp' ), $jobs_dashboard_link ),
+								sprintf( __( 'Scholarship draft was saved. You can resumed it from the <a href="%s" title="Scholarship Dashboard">scholarship dashboard</a>', 'jobboardwp' ), $jobs_dashboard_link ),
 								'draft'
 							);
 
 							break;
 						case 'on-moderation':
 							$notice = JB()->options()->get( 'job-submitted-notice' );
-							$notice = ! empty( $notice ) ? $notice : __( 'Job is submitted successfully. It will be visible once approved.', 'jobboardwp' );
+							$notice = ! empty( $notice ) ? $notice : __( 'Scholarship is submitted successfully. It will be visible once approved.', 'jobboardwp' );
 
 							$posting_form->add_notice(
 								$notice,
@@ -80,12 +80,12 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 							if ( ! empty( $_GET['published-id'] ) ) {
 							    // translators: %s: link to the published job
 								$posting_form->add_notice(
-									sprintf( __( 'Job is posted successfully. To view your job <a href="%s">click here</a>', 'jobboardwp' ), get_permalink( $_GET['published-id'] ) ),
+									sprintf( __( 'Scholarship is posted successfully. To view your scholarship <a href="%s">click here</a>', 'jobboardwp' ), get_permalink( $_GET['published-id'] ) ),
 									'published'
 								);
 							} else {
 								$posting_form->add_notice(
-									__( 'Job is posted successfully.', 'jobboardwp' ),
+									__( 'Scholarship is posted successfully.', 'jobboardwp' ),
 									'published'
 								);
 							}
@@ -112,7 +112,7 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 				$job = get_post( $job_id );
 
 				if ( is_wp_error( $job ) || empty( $job ) ) {
-					return __( 'Wrong job', 'jobboardwp' );
+					return __( 'Wrong scholarship', 'jobboardwp' );
 				}
 
 				if ( ! is_user_logged_in() && $job->post_author != 0 ) {
@@ -122,7 +122,7 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 					<p>
 						<?php
 						// translators: %s: login link
-						printf( __( '<a href="%s">Sign in</a> to post a job.', 'jobboardwp' ), wp_login_url( get_permalink() ) ); ?>
+						printf( __( '<a href="%s">Sign in</a> to post a scholarship.', 'jobboardwp' ), wp_login_url( get_permalink() ) ); ?>
 					</p>
 
 					<?php return ob_get_clean();
@@ -146,11 +146,11 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 					}
 
 					if ( ! in_array( $job->post_status, $statuses ) ) {
-						return __( 'Wrong job', 'jobboardwp' );
+						return __( 'Wrong scholarship', 'jobboardwp' );
 					}
 
 					if ( ! empty( $job ) && in_array( $job->post_status, [ 'publish' ] ) && JB()->options()->get( 'published-job-editing' ) == '0' ) {
-						return __( 'You haven\'t ability to edit this job.', 'jobboardwp' );
+						return __( 'You don\'t have the ability to edit this scholarship.', 'jobboardwp' );
 					}
 
 					$atts['job'] = $job;
@@ -172,7 +172,7 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 					}
 
 					if ( $job->post_status != 'jb-preview' ) {
-						return __( 'Wrong job preview', 'jobboardwp' );
+						return __( 'Wrong scholarship preview', 'jobboardwp' );
 					}
 
 					$atts['job_id'] = $job->ID;
@@ -289,7 +289,7 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 					<p>
 						<?php
 						// translators: %s: login link
-						printf( __( '<a href="%s">Sign in</a> to post a job.', 'jobboardwp' ), wp_login_url( get_permalink() ) ); ?>
+						printf( __( '<a href="%s">Sign in</a> to post a scholarship.', 'jobboardwp' ), wp_login_url( get_permalink() ) ); ?>
 					</p>
 
 					<?php $html .= ob_get_clean();
@@ -359,9 +359,9 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 				'hide-location-search'  => JB()->options()->get( 'jobs-list-hide-location-search' ),
 				'hide-filters'          => JB()->options()->get( 'jobs-list-hide-filters' ),
 				'hide-job-types'        => JB()->options()->get( 'jobs-list-hide-job-types' ),
-				'no-jobs-text'          => __( 'No Jobs', 'jobboardwp' ),
-				'no-jobs-search-text'   => __( 'No Jobs found', 'jobboardwp' ),
-				'load-more-text'        => __( 'Load more jobs','jobboardwp' ),
+				'no-jobs-text'          => __( 'No scholarships', 'jobboardwp' ),
+				'no-jobs-search-text'   => __( 'No scholarships found', 'jobboardwp' ),
+				'load-more-text'        => __( 'Load more scholarships','jobboardwp' ),
 				'category'              => '',
 				'type'                  => '',
 			] );

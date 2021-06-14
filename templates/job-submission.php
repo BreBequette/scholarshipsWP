@@ -6,7 +6,7 @@
 			   ! JB()->options()->get( 'account-creation' ) ) { ?>
 
 		<span>
-			<?php _e( 'You must sign in to create a new job.', 'jobboardwp' ) ?>
+			<?php _e( 'You must sign in to create a new scholarship.', 'jobboardwp' ) ?>
 			<a class="button" href="<?php echo esc_url( wp_login_url( get_permalink(), true ) ) ?>"><?php esc_attr_e( 'Sign in', 'jobboardwp' ) ?></a>
 		</span>
 
@@ -228,7 +228,7 @@
 
 		$sections = array_merge( $sections, [
 			'job-details'       => [
-				'title'     => __( 'Job Details', 'jobboardwp' ),
+				'title'     => __( 'Scholarship Details', 'jobboardwp' ),
 				'fields'    => [
 					[
 						'type'      => 'text',
@@ -239,7 +239,7 @@
 					],
 					[
 						'type'                  => 'conditional_radio',
-						'label'                 => __( 'Job Location', 'jobboardwp' ),
+						'label'                 => __( 'Scholarship Location', 'jobboardwp' ),
 						'id'                    => 'job_location_type',
 						'options'               => [
 							'0' => __( 'Onsite', 'jobboardwp' ),
@@ -286,7 +286,7 @@
 					],
 					[
 						'type'      => 'select',
-						'label'     => __( 'Job Type', 'jobboardwp' ),
+						'label'     => __( 'Scholarship Type', 'jobboardwp' ),
 						'id'        => 'job_type',
 						'class'     => 'jb-s2',
 						'options'   => $types_options,
@@ -295,7 +295,7 @@
 					],
 					[
 						'type'      => 'select',
-						'label'     => __( 'Job Category', 'jobboardwp' ),
+						'label'     => __( 'Scholarship Category', 'jobboardwp' ),
 						'id'        => 'job_category',
 						'class'     => 'jb-s2',
 						'options'   => $categories_options,

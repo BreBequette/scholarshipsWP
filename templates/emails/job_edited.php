@@ -1,9 +1,9 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
-The job listing {job_title} has been edited.
+The scholarship listing {job_title} has been edited.
 
 {job_details}
 
-View edited job: {view_job_url}
-Approve job edit: {approve_job_url}
-Trash job: {trash_job_url}
+View edited scholarship: {view_job_url}
+Approve scholarship edit: {approve_job_url}
+Trash scholarship: {trash_job_url}

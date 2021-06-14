@@ -129,7 +129,7 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 
 			$job_templates = [
 				''          => __( 'Wordpress native post template', 'jobboardwp' ),
-				'default'   => __( 'Default job template', 'jobboardwp' )
+				'default'   => __( 'Default scholarship template', 'jobboardwp' )
 			];
 
 			$custom_templates = JB()->common()->job()->get_templates();
@@ -153,7 +153,7 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 							'fields'    => $general_pages_fields,
 						],
 						'job'  => [
-							'title'     => __( 'Job', 'jobboardwp' ),
+							'title'     => __( 'Scholarship', 'jobboardwp' ),
 							'fields'    => [
 								[
 									'id'        => 'job-categories',
@@ -165,8 +165,8 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 									'id'        => 'job-template',
 									'type'      => 'select',
 									'options'   => $job_templates,
-									'label'     => __( 'Job Template', 'jobboardwp' ),
-									'helptip'   => __( 'Select which template you would like applied to the job CPT.', 'jobboardwp' ),
+									'label'     => __( 'Scholarship Template', 'jobboardwp' ),
+									'helptip'   => __( 'Select which template you would like applied to the scholarship CPT.', 'jobboardwp' ),
 									'size'      => 'medium',
 								],
 								[
@@ -183,25 +183,25 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 									'id'        => 'googlemaps-api-key',
 									'type'      => 'text',
 									'label'     => __( 'GoogleMaps API key', 'jobboardwp' ),
-									'helptip'   => __( 'Enable using GoogleMaps API for getting extended data about job location.', 'jobboardwp' ),
+									'helptip'   => __( 'Enable using GoogleMaps API for getting extended data about scholarship location.', 'jobboardwp' ),
 									'size'      => 'medium',
 								],
 							],
 						],
 						'job_submission'  => [
-							'title'     => __( 'Job Submission', 'jobboardwp' ),
+							'title'     => __( 'Scholarship Submission', 'jobboardwp' ),
 							'fields'    => [
 								[
 									'id'        => 'account-required',
 									'type'      => 'checkbox',
 									'label'     => __( 'Account Needed', 'jobboardwp' ),
-									'helptip'   => __( 'Require users to be logged-in before they can submit a job.', 'jobboardwp' ),
+									'helptip'   => __( 'Require users to be logged-in before they can submit a scholarship.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'account-creation',
 									'type'      => 'checkbox',
 									'label'     => __( 'User Registration', 'jobboardwp' ),
-									'helptip'   => __( 'Allow users to create an account when submitting a job listing.', 'jobboardwp' ),
+									'helptip'   => __( 'Allow users to create an account when submitting a scholarship listing.', 'jobboardwp' ),
 								],
 								[
 									'id'            => 'account-username-generate',
@@ -248,39 +248,39 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 									'id'        => 'job-moderation',
 									'type'      => 'checkbox',
 									'label'     => __( 'Set submissions as Pending', 'jobboardwp' ),
-									'helptip'   => __( 'New job submissions will not appear on the jobs list until approved by admin.', 'jobboardwp' ),
+									'helptip'   => __( 'New job submissions will not appear on the scholarships list until approved by admin.', 'jobboardwp' ),
 								],
 								[
 									'id'            => 'pending-job-editing',
 									'type'          => 'checkbox',
-									'label'         => __( 'Pending Job Edits', 'jobboardwp' ),
-									'helptip'       => __( 'Allow users to edit their pending jobs until they are approved by an admin.', 'jobboardwp' ),
+									'label'         => __( 'Pending Scholarship Edits', 'jobboardwp' ),
+									'helptip'       => __( 'Allow users to edit their pending scholarships until they are approved by an admin.', 'jobboardwp' ),
 									'conditional'   => [ 'job-moderation', '=', '1' ],
 								],
 								[
 									'id'            => 'published-job-editing',
 									'type'          => 'select',
-									'label'         => __( 'Published Job Edits', 'jobboardwp' ),
+									'label'         => __( 'Published Scholarship Edits', 'jobboardwp' ),
 									'options'       => [
-										'0' => __( 'Users cannot edit their published job listings', 'jobboardwp' ),
-										'1' => __( 'Users can edit their published job listings but edits require approval by admin', 'jobboardwp' ),
-										'2' => __( 'Users can edit their published job listing without approval by admin', 'jobboardwp' ),
+										'0' => __( 'Users cannot edit their published scholarship listings', 'jobboardwp' ),
+										'1' => __( 'Users can edit their published scholarship listings but edits require approval by admin', 'jobboardwp' ),
+										'2' => __( 'Users can edit their published scholarship listing without approval by admin', 'jobboardwp' ),
 									],
-									'helptip'       => __( 'Select if users can edit their published jobs and if edits require admin approval.', 'jobboardwp' ),
+									'helptip'       => __( 'Select if users can edit their published scholarships and if edits require admin approval.', 'jobboardwp' ),
 									'size'          => 'medium',
 								],
 								[
 									'id'        => 'job-duration',
 									'type'      => 'text',
-									'label'     => __( 'Job duration', 'jobboardwp' ),
-									'helptip'   => __( 'Set how long you want jobs to appear on the jobs list. After the set duration jobs will set to expired. If you do not want jobs to have an expiration date, leave this field blank.', 'jobboardwp' ),
+									'label'     => __( 'Scholarship duration', 'jobboardwp' ),
+									'helptip'   => __( 'Set how long you want scholarships to appear on the jobs list. After the set duration scholarships will set to expire. If you do not want scholarships to have an expiration date, leave this field blank.', 'jobboardwp' ),
 									'size'      => 'small',
 								],
 								[
 									'id'            => 'required-job-type',
 									'type'          => 'checkbox',
-									'label'         => __( 'Required job type', 'jobboardwp' ),
-									'helptip'       => __( 'Job type is required.', 'jobboardwp' ),
+									'label'         => __( 'Required scholarship type', 'jobboardwp' ),
+									'helptip'       => __( 'Scholarship type is required.', 'jobboardwp' ),
 								],
 								[
 									'id'            => 'application-method',
@@ -291,69 +291,69 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 										'url'   => __( 'Website URL', 'jobboardwp' ),
 										''      => __( 'Email address or website URL', 'jobboardwp' ),
 									],
-									'helptip'       => __( 'Select whether employers have to provide an email address, website URL or either for their job listing, so job seekers can apply for the job.', 'jobboardwp' ),
+									'helptip'       => __( 'Select whether employers have to provide an email address, website URL or either for their scholarship listing, so scholarship seekers can apply for the scholarship.', 'jobboardwp' ),
 									'size'          => 'small',
 								],
 								[
 									'id'        => 'job-submitted-notice',
 									'type'      => 'text',
-									'label'     => __( 'Job submitted notice', 'jobboardwp' ),
-									'helptip'   => __( 'The text that appears after a job has been submitted.', 'jobboardwp' ),
+									'label'     => __( 'Scholarship submitted notice', 'jobboardwp' ),
+									'helptip'   => __( 'The text that appears after a scholarship has been submitted.', 'jobboardwp' ),
 									'size'      => 'long',
 								],
 							],
 						],
 						'jobs'  => [
-							'title'     => __( 'Jobs List', 'jobboardwp' ),
+							'title'     => __( 'Scholarships List', 'jobboardwp' ),
 							'fields'    => [
 								[
 									'id'        => 'jobs-list-pagination',
 									'type'      => 'number',
-									'label'     => __( 'Jobs per page', 'jobboardwp' ),
-									'helptip'   => __( 'How many jobs would you like to appear on initial load and after clicking load more button.', 'jobboardwp' ),
+									'label'     => __( 'Scholarships per page', 'jobboardwp' ),
+									'helptip'   => __( 'How many scholarships would you like to appear on initial load and after clicking load more button.', 'jobboardwp' ),
 									'size'      => 'small',
 								],
 								[
 									'id'        => 'jobs-list-no-logo',
 									'type'      => 'checkbox',
 									'label'     => __( 'Hide Logos', 'jobboardwp' ),
-									'helptip'   => __( 'If selected company logos will not appear on the jobs list.', 'jobboardwp' ),
+									'helptip'   => __( 'If selected company logos will not appear on the scholarships list.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'jobs-list-hide-filled',
 									'type'      => 'checkbox',
-									'label'     => __( 'Hide filled jobs', 'jobboardwp' ),
-									'helptip'   => __( 'If selected jobs that have been marked as filled will not appear on the jobs list.', 'jobboardwp' ),
+									'label'     => __( 'Hide awarded scholarships', 'jobboardwp' ),
+									'helptip'   => __( 'If selected, scholarships that have been marked as awarded will not appear on the scholarships list.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'jobs-list-hide-expired',
 									'type'      => 'checkbox',
-									'label'     => __( 'Hide expired jobs', 'jobboardwp' ),
-									'helptip'   => __( 'If selected jobs that have expired will not appear in jobs list or in archive/search.', 'jobboardwp' ),
+									'label'     => __( 'Hide expired scholarships', 'jobboardwp' ),
+									'helptip'   => __( 'If selected scholarships that have expired will not appear in scholarships list or in archive/search.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'jobs-list-hide-search',
 									'type'      => 'checkbox',
 									'label'     => __( 'Hide search field', 'jobboardwp' ),
-									'helptip'   => __( 'If selected the search field will not be displayed on the jobs list.', 'jobboardwp' ),
+									'helptip'   => __( 'If selected the search field will not be displayed on the scholarships list.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'jobs-list-hide-location-search',
 									'type'      => 'checkbox',
 									'label'     => __( 'Hide location field', 'jobboardwp' ),
-									'helptip'   => __( 'If selected the location search field will not be displayed on the jobs list.', 'jobboardwp' ),
+									'helptip'   => __( 'If selected the location search field will not be displayed on the scholarships list.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'jobs-list-hide-filters',
 									'type'      => 'checkbox',
 									'label'     => __( 'Hide filters', 'jobboardwp' ),
-									'helptip'   => __( 'If selected the filters section will not be displayed on the jobs list.', 'jobboardwp' ),
+									'helptip'   => __( 'If selected the filters section will not be displayed on the scholarships list.', 'jobboardwp' ),
 								],
 								[
 									'id'        => 'jobs-list-hide-job-types',
 									'type'      => 'checkbox',
-									'label'     => __( 'Hide job types', 'jobboardwp' ),
-									'helptip'   => __( 'If selected the job types filter will not be displayed on the jobs list.', 'jobboardwp' ),
+									'label'     => __( 'Hide scholarship types', 'jobboardwp' ),
+									'helptip'   => __( 'If selected the scholarship types filter will not be displayed on the jobs list.', 'jobboardwp' ),
 								],
 							],
 						],
@@ -506,14 +506,14 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 
 					add_settings_field(
 						JB()->options()->get_key( 'job-slug' ),
-						__( 'Job base', 'jobboardwp' ),
+						__( 'Scholarship base', 'jobboardwp' ),
 						[ $this, 'job_base_slug_input' ],
 						'permalink',
 						'optional'
 					);
 					add_settings_field(
 						JB()->options()->get_key( 'job-type-slug' ),
-						__( 'Job type base', 'jobboardwp' ),
+						__( 'Scholarship type base', 'jobboardwp' ),
 						[ $this, 'job_type_slug_input' ],
 						'permalink',
 						'optional'
@@ -522,7 +522,7 @@ if ( ! class_exists( 'jb\admin\Settings' ) ) {
 					if ( JB()->options()->get( 'job-categories' ) ) {
 						add_settings_field(
 							JB()->options()->get_key( 'job-category-slug' ),
-							__( 'Job category base', 'jobboardwp' ),
+							__( 'Scholarship category base', 'jobboardwp' ),
 							[ $this, 'job_category_slug_input' ],
 							'permalink',
 							'optional'

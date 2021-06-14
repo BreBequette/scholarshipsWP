@@ -336,11 +336,10 @@ if ( ! class_exists( 'jb\common\Mail' ) ) {
 		function get_job_details( $job ) {
 			$company_data = JB()->common()->job()->get_company_data( $job->ID );
 
-			$details = __( 'Job Title:', 'jobboardwp' ) . ' ' . $job->post_title . "\n\r" .
+			$details = __( 'Scholarship Title:', 'jobboardwp' ) . ' ' . $job->post_title . "\n\r" .
 			__( 'Description:', 'jobboardwp' ) . ' ' . $job->post_content . "\n\r" .
 			__( 'Posted by:', 'jobboardwp' ) . ' ' . JB()->common()->job()->get_job_author( $job->ID ) . "\n\r" .
 			__( 'Application Contact:', 'jobboardwp' ) . ' ' . get_post_meta( $job->ID, 'jb-application-contact', true ) . "\n\r" .
-			__( 'Location:', 'jobboardwp' ) . ' ' . JB()->common()->job()->get_location( $job->ID ) . "\n\r" .
 			__( 'Company name:', 'jobboardwp' ) . ' ' . $company_data['name'] . "\n\r" .
 			__( 'Company website:', 'jobboardwp' ) . ' ' . $company_data['website'] . "\n\r" .
 			__( 'Company tagline:', 'jobboardwp' ) . ' ' . $company_data['tagline'];

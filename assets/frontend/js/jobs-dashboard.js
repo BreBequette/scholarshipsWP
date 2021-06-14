@@ -65,7 +65,7 @@ wp.JB.jobs_dashboard = {
 				query_string = '';
 			}
 
-			window.history.pushState( 'string', 'JB Jobs Dashboard', window.location.origin + window.location.pathname + query_string );
+			window.history.pushState( 'string', 'Scholarship Dashboard', window.location.origin + window.location.pathname + query_string );
 		},
 		get: function( search_key ) {
 			var data = {};
@@ -226,7 +226,7 @@ jQuery( document ).ready( function($) {
 
 	$(document.body).on('click', '.jb-jobs-action-delete', function() {
 
-		if ( ! confirm( wp.i18n.__( 'Are you sure that you want to delete this job?', 'jobboardwp' ) ) ) {
+		if ( ! confirm( wp.i18n.__( 'Are you sure that you want to delete this scholarship?', 'jobboardwp' ) ) ) {
 			return false;
 		}
 

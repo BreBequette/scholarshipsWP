@@ -13,8 +13,8 @@
 					$search_from_url = ! empty( $_GET['jb-search'] ) ? stripslashes( $_GET['jb-search'] ) : ''; ?>
 
 					<label>
-						<span><?php _e( 'Find Jobs:', 'jobboardwp' ); ?></span>
-						<input type="search" class="jb-search-line" placeholder="<?php esc_attr_e( 'Job title, keywords, or company', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url ) ?>" aria-label="<?php esc_attr_e( 'Find Jobs by title', 'jobboardwp' ) ?>" speech />
+						<span><?php _e( 'Find Scholarships:', 'jobboardwp' ); ?></span>
+						<input type="search" class="jb-search-line" placeholder="<?php esc_attr_e( 'Scholarship title, keywords, or company', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url ) ?>" aria-label="<?php esc_attr_e( 'Find Scholarships by title', 'jobboardwp' ) ?>" speech />
 					</label>
 
 					<?php
@@ -30,8 +30,8 @@
 					} ?>
 
 					<label>
-						<span><?php _e( 'Find Jobs:', 'jobboardwp' ); ?></span>
-						<input type="search" class="<?php echo esc_attr( implode( ' ', $classes ) ) ?>" placeholder="<?php esc_attr_e( 'City, State or Country', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url2 ) ?>" aria-label="<?php esc_attr_e( 'Find Jobs by location', 'jobboardwp' ) ?>" speech />
+						<span><?php _e( 'Find Scholarships:', 'jobboardwp' ); ?></span>
+						<input type="search" class="<?php echo esc_attr( implode( ' ', $classes ) ) ?>" placeholder="<?php esc_attr_e( 'City, State or Country', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url2 ) ?>" aria-label="<?php esc_attr_e( 'Find Scholarships by location', 'jobboardwp' ) ?>" speech />
 						<?php if ( ! empty( $key ) ) {
 
 							$search_location_city = ! empty( $_GET['jb-location-search-city'] ) ? stripslashes( $_GET['jb-location-search-city'] ) : '';
@@ -62,7 +62,7 @@
 
 		<div class="jb-jobs-header-row jb-jobs-filters-row">
 			<label>
-				<input type="checkbox" class="jb-only-remote" value="1" <?php checked( $is_remote ) ?> />&nbsp;<?php esc_attr_e( 'Show only remote jobs', 'jobboardwp' ); ?>
+				<input type="checkbox" class="jb-only-remote" value="1" <?php checked( $is_remote ) ?> />&nbsp;<?php esc_attr_e( 'Show only remote scholarships', 'jobboardwp' ); ?>
 			</label>
 
 			<?php $types = get_terms( [
@@ -74,7 +74,7 @@
 
 				<label>
 					<select class="jb-job-type-filter">
-						<option value="" <?php selected( $job_type, '' ) ?>><?php esc_attr_e( 'Select job type', 'jobboardwp' ); ?></option>
+						<option value="" <?php selected( $job_type, '' ) ?>><?php esc_attr_e( 'Select scholarship type', 'jobboardwp' ); ?></option>
 						<?php foreach ( $types as $type ) { ?>
 							<option value="<?php echo esc_attr( $type->term_id ) ?>" <?php selected( $job_type, $type->term_id ) ?>><?php echo esc_html( $type->name ) ?></option>
 						<?php } ?>
@@ -92,7 +92,7 @@
 				if ( ! empty( $categories ) ) { ?>
 					<label>
 						<select class="jb-job-category-filter">
-							<option value="" <?php selected( $job_category, '' ) ?>><?php esc_attr_e( 'Select job category', 'jobboardwp' ); ?></option>
+							<option value="" <?php selected( $job_category, '' ) ?>><?php esc_attr_e( 'Select scholarship category', 'jobboardwp' ); ?></option>
 							<?php foreach ( $categories as $category ) { ?>
 								<option value="<?php echo esc_attr( $category->term_id ) ?>" <?php selected( $job_category, $category->term_id ) ?>><?php echo esc_html( $category->name ) ?></option>
 							<?php } ?>

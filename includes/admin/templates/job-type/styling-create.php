@@ -7,14 +7,14 @@ $fields = apply_filters( 'jb_job-type-styling', [
 		'id'            => 'jb-color',
 		'type'          => 'color',
 		'label'         => __( 'Tag Color', 'jobboardwp' ),
-		'description'   => __( 'Customize job type tag color', 'jobboardwp' ),
+		'description'   => __( 'Customize scholarship type tag color', 'jobboardwp' ),
 		'value'         => ! empty( $data['jb-color'] ) ? $data['jb-color'] : '',
 	],
 	[
 		'id'            => 'jb-background',
 		'type'          => 'color',
 		'label'         => __( 'Tag Background', 'jobboardwp' ),
-		'description'   => __( 'Customize job type tag background', 'jobboardwp' ),
+		'description'   => __( 'Customize scholarship type tag background', 'jobboardwp' ),
 		'value'         => ! empty( $data['jb-background'] ) ? $data['jb-background'] : '',
 	],
 ], $data, 'create' );

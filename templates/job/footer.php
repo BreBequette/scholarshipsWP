@@ -13,7 +13,7 @@ if ( ! empty( $jb_job_footer['job_id'] ) ) {
 
 				<div class="jb-job-apply-wrapper">
 
-					<input type="button" class="jb-button jb-job-apply" value="<?php esc_attr_e( 'Apply for job', 'jobboardwp' ); ?>" />
+					<input type="button" class="jb-button jb-job-apply" value="<?php esc_attr_e( 'Apply for scholarship', 'jobboardwp' ); ?>" />
 
 					<div class="jb-job-apply-description">
 						<?php if ( is_email( $contact ) ) {
@@ -28,13 +28,13 @@ if ( ! empty( $jb_job_footer['job_id'] ) ) {
 							<p>
 								<?php
 								// translators: %1$s: mailto URL, %2$s: contact email
-								printf( __( 'To apply for this job <strong>email your details to</strong> <a href="%1$s">%2$s</a>.', 'jobboardwp' ), $contact_mailto, $contact ); ?>
+								printf( __( 'To apply for this scholarship, <strong>email your details to</strong> <a href="%1$s">%2$s</a>.', 'jobboardwp' ), $contact_mailto, $contact ); ?>
 							</p>
 						<?php } else { ?>
 							<p>
 								<?php
 								// translators: %1$s: application's website URL
-								printf( __( 'To apply for this job please visit <a href="%1$s">%1$s</a>.', 'jobboardwp' ), $contact ); ?>
+								printf( __( 'To apply for this scholarship, please visit <a href="%1$s">%1$s</a>.', 'jobboardwp' ), $contact ); ?>
 							</p>
 						<?php } ?>
 

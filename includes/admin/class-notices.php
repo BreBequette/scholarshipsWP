@@ -229,7 +229,7 @@ if ( ! class_exists( 'jb\admin\Notices' ) ) {
 			<p>
 				<?php
 				// translators: %1$s: plugin name, %2$s: list of pre-defined pages
-				printf( __( 'To add job board functionality to your website %1$s needs to create the following pages: %2$s.', 'jobboardwp' ), jb_plugin_name, implode( ', ', $page_titles ) );
+				printf( __( 'To add scholarship board functionality to your website %1$s needs to create the following pages: %2$s.', 'jobboardwp' ), jb_plugin_name, implode( ', ', $page_titles ) );
 				?>
 			</p>
 			<p>

@@ -60,7 +60,7 @@ $fields = apply_filters( 'jb_job-data', [
 		'id'            => 'jb-application-contact',
 		'type'          => 'text',
 		'label'         => __( 'Application contact', 'jobboardwp' ),
-		'description'   => __( 'It\'s required email or URL for the "application" area.', 'jobboardwp' ),
+		'description'   => __( 'Email or URL is required for the "application" area.', 'jobboardwp' ),
 		'value'         => $app_contact,
 	],
 	[
@@ -132,14 +132,14 @@ $fields = apply_filters( 'jb_job-data', [
 	[
 		'id'            => 'jb-is-filled',
 		'type'          => 'checkbox',
-		'label'         => __( 'Position Filled', 'jobboardwp' ),
-		'description'   => __( 'Filled listings will no longer accept applications.', 'jobboardwp' ),
+		'label'         => __( 'Scholarship awarded', 'jobboardwp' ),
+		'description'   => __( 'Awarded scholarships will no longer accept applications.', 'jobboardwp' ),
 		'value'         => $is_filled,
 	],
 	[
 		'id'    => 'jb-expiry-date',
 		'type'  => 'datepicker',
-		'label' => __( 'Expiry Date', 'jobboardwp' ),
+		'label' => __( 'Expiration Date', 'jobboardwp' ),
 		'value' => $expiry_date,
 		'size'  => 'small',
 	],

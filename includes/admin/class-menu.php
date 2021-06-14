@@ -78,15 +78,15 @@ if ( ! class_exists( 'jb\admin\Menu' ) ) {
 		 * @since 1.0
 		 */
 		function menu() {
-			add_menu_page( __( 'Job Board', 'jobboardwp' ), __( 'Job Board', 'jobboardwp' ), 'manage_options', $this->slug, '', 'dashicons-businessman', 40 );
+			add_menu_page( __( 'Scholarship Board', 'jobboardwp' ), __( 'Scholarship Board', 'jobboardwp' ), 'manage_options', $this->slug, '', 'dashicons-money-alt', 40 );
 			add_submenu_page( $this->slug, __( 'Dashboard', 'jobboardwp' ), __( 'Dashboard', 'jobboardwp' ), 'manage_options', $this->slug, '' );
 
-			add_submenu_page( $this->slug, __( 'Jobs', 'jobboardwp' ), __( 'Jobs', 'jobboardwp' ), 'read_private_jb-jobs', 'edit.php?post_type=jb-job' );
+			add_submenu_page( $this->slug, __( 'Scholarships', 'jobboardwp' ), __( 'Scholarships', 'jobboardwp' ), 'read_private_jb-jobs', 'edit.php?post_type=jb-job' );
 			add_submenu_page( $this->slug, __( 'Add New', 'jobboardwp' ), __( 'Add New', 'jobboardwp' ), 'create_jb-jobs', 'post-new.php?post_type=jb-job' );
-			add_submenu_page( $this->slug, __( 'Job Types', 'jobboardwp' ), __( 'Job Types', 'jobboardwp' ), 'manage_jb-job-types', 'edit-tags.php?taxonomy=jb-job-type&post_type=jb-job' );
+			add_submenu_page( $this->slug, __( 'Scholarship Types', 'jobboardwp' ), __( 'Scholarship Types', 'jobboardwp' ), 'manage_jb-job-types', 'edit-tags.php?taxonomy=jb-job-type&post_type=jb-job' );
 
 			if ( JB()->options()->get( 'job-categories' ) ) {
-				add_submenu_page( $this->slug, __( 'Job Categories', 'jobboardwp' ), __( 'Job Categories', 'jobboardwp' ), 'manage_jb-job-categories', 'edit-tags.php?taxonomy=jb-job-category&post_type=jb-job' );
+				add_submenu_page( $this->slug, __( 'Scholarship Categories', 'jobboardwp' ), __( 'Scholarship Categories', 'jobboardwp' ), 'manage_jb-job-categories', 'edit-tags.php?taxonomy=jb-job-category&post_type=jb-job' );
 			}
 
 			add_submenu_page( $this->slug, __( 'Settings', 'jobboardwp' ), __( 'Settings', 'jobboardwp' ), 'manage_options', 'jb-settings', [ &$this, 'settings' ] );

@@ -6,11 +6,11 @@ if ( ! empty( $jb_job_notices['job_id'] ) ) {
 
 	if ( JB()->common()->job()->is_filled( $job_id ) ) { ?>
 		<div class="jb-job-filled-notice">
-			<i class="fas fa-exclamation-circle"></i><?php _e( 'This job has been filled', 'jobboardwp' ); ?>
+			<i class="fas fa-exclamation-circle"></i><?php _e( 'This scholarship has been awarded', 'jobboardwp' ); ?>
 		</div>
 	<?php } elseif ( JB()->common()->job()->is_expired( $job_id ) ) { ?>
 		<div class="jb-job-expired-notice">
-			<i class="fas fa-exclamation-circle"></i><?php _e( 'This job has been expired', 'jobboardwp' ); ?>
+			<i class="fas fa-exclamation-circle"></i><?php _e( 'This scholarship has expired', 'jobboardwp' ); ?>
 		</div>
 	<?php }
 }

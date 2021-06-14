@@ -67,7 +67,7 @@ wp.JB.jobs_list = {
 				query_string = '';
 			}
 
-			window.history.pushState( 'string', 'JB Jobs Dashboard', window.location.origin + window.location.pathname + query_string );
+			window.history.pushState( 'string', 'Scholarships Dashboard', window.location.origin + window.location.pathname + query_string );
 		},
 		get: function( search_key ) {
 			var data = {};

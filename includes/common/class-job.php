@@ -605,11 +605,11 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 
 				if ( ! $this->is_filled( $job->ID ) ) {
 					$actions['fill'] = [
-						'title' => __( 'Mark as filled', 'jobboardwp' ),
+						'title' => __( 'Mark as awarded', 'jobboardwp' ),
 					];
 				} else {
 					$actions['un-fill'] = [
-						'title' => __( 'Mark as un-filled', 'jobboardwp' ),
+						'title' => __( 'Mark as un-awarded', 'jobboardwp' ),
 					];
 				}
 

@@ -98,7 +98,7 @@ if ( ! class_exists( 'jb\admin\Columns' ) ) {
 					'option_none_value' => '',
 				];
 
-				echo '<label class="screen-reader-text" for="jb-job-category">' . __( 'Filter by job category', 'jobboardwp' ) . '</label>';
+				echo '<label class="screen-reader-text" for="jb-job-category">' . __( 'Filter by scholarship category', 'jobboardwp' ) . '</label>';
 				wp_dropdown_categories( $dropdown_options );
 			}
 
@@ -123,7 +123,7 @@ if ( ! class_exists( 'jb\admin\Columns' ) ) {
 					'option_none_value' => '',
 				];
 
-				echo '<label class="screen-reader-text" for="jb-job-type">' . __( 'Filter by job type', 'jobboardwp' ) . '</label>';
+				echo '<label class="screen-reader-text" for="jb-job-type">' . __( 'Filter by scholarship type', 'jobboardwp' ) . '</label>';
 				wp_dropdown_categories( $dropdown_options );
 			}
 
@@ -156,8 +156,8 @@ if ( ! class_exists( 'jb\admin\Columns' ) ) {
 				$approved_count = intval( $_REQUEST['jb-approved'] );
 				// translators: %s is the count of approved jobs.
 				printf( '<div class="jb-admin-notice notice updated fade">' .
-						_n( '<p>%s job is approved.</p>',
-							'<p>%s jobs are approved.</p>',
+						_n( '<p>%s scholarship is approved.</p>',
+							'<p>%s scholarships are approved.</p>',
 							$approved_count,
 							'jobboardwp'
 						) . '</div>', $approved_count );
@@ -165,8 +165,8 @@ if ( ! class_exists( 'jb\admin\Columns' ) ) {
 				$deleted_count = intval( $_REQUEST['jb-deleted'] );
 				// translators: %s is the count of deleted jobs.
 				printf( '<div class="jb-admin-notice notice updated fade">' .
-						_n( '<p>%s job is deleted.</p>',
-							'<p>%s jobs are deleted.</p>',
+						_n( '<p>%s scholarship is deleted.</p>',
+							'<p>%s scholarships are deleted.</p>',
 							$deleted_count,
 							'jobboardwp'
 						) . '</div>', $deleted_count );
@@ -324,7 +324,7 @@ if ( ! class_exists( 'jb\admin\Columns' ) ) {
 				'title'     => __( '(#ID) Position', 'jobboardwp' ),
 				'status'    => __( 'Status', 'jobboardwp' ),
 				'location'  => __( 'Location', 'jobboardwp' ),
-				'filled'    => __( 'Filled', 'jobboardwp' ),
+				'filled'    => __( 'Awarded', 'jobboardwp' ),
 				'type'      => __( 'Type', 'jobboardwp' ),
 				'category'  => __( 'Category', 'jobboardwp' ),
 				'posted'    => __( 'Posted', 'jobboardwp' ),

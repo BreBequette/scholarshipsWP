@@ -27,7 +27,7 @@ if ( ! class_exists( 'jb\common\Permalinks' ) ) {
 		/**
 		 * Verifies username and password. Redirects visitor
 		 * to the login page with login empty status if
-		 * eather username or password is empty.
+		 * either username or password is empty.
 		 *
 		 * @param mixed $user
 		 * @param string $username
