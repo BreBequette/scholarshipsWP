@@ -529,6 +529,7 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 
 			$response = apply_filters( 'jb-job-raw-data', [
 				'title'             => $job->post_title,
+				'amount'			=> $job->post_amount,
 				'description'       => $job->post_content,
 				'type'              => $job_types,
 				'category'          => $job_categories,

@@ -244,6 +244,7 @@ if ( ! class_exists( 'jb\admin\Install' ) ) {
 				//If page does not exist - create it
 				$user_page = [
 					'post_title'        => $array['title'],
+					'post_amount'        => $array['amount'],
 					'post_content'      => ! empty( $array['content'] ) ? $array['content'] : '',
 					'post_name'         => $slug,
 					'post_type'         => 'page',

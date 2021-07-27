@@ -555,6 +555,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 								'post_parent'       => 0,
 								'post_title'        => $title,
 								'post_content'      => $content,
+								'post_amount'       => $amount,
 								'post_status'       => $status,
 								'meta_input'        => [
 									'jb-location-type'          => $location_type,

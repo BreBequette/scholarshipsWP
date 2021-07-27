@@ -338,6 +338,7 @@ if ( ! class_exists( 'jb\common\Mail' ) ) {
 
 			$details = __( 'Scholarship Title:', 'jobboardwp' ) . ' ' . $job->post_title . "\n\r" .
 			__( 'Description:', 'jobboardwp' ) . ' ' . $job->post_content . "\n\r" .
+			__( 'Amount:', 'jobboardwp' ) . ' ' . $job->post_amount . "\n\r" .
 			__( 'Posted by:', 'jobboardwp' ) . ' ' . JB()->common()->job()->get_job_author( $job->ID ) . "\n\r" .
 			__( 'Application Contact:', 'jobboardwp' ) . ' ' . get_post_meta( $job->ID, 'jb-application-contact', true ) . "\n\r" .
 			__( 'Company name:', 'jobboardwp' ) . ' ' . $company_data['name'] . "\n\r" .

@@ -64,6 +64,13 @@ $fields = apply_filters( 'jb_job-data', [
 		'value'         => $app_contact,
 	],
 	[
+		'id'            => 'jb-amount',
+		'type'          => 'text',
+		'label'         => __( 'Scholarship amount', 'jobboardwp' ),
+		'description'   => __( 'Enter the amount', 'jobboardwp' ),
+		'value'         => $amount,
+	],
+	[
 		'id'        => 'jb-location-type',
 		'type'      => 'select',
 		'label'     => __( 'Location Type', 'jobboardwp' ),
@@ -77,12 +84,13 @@ $fields = apply_filters( 'jb_job-data', [
 	],
 	[
 		'id'            => 'jb-location',
-		'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
-		'label'         => __( 'Location', 'jobboardwp' ),
-		'description'   => __( 'Required for onsite jobs.', 'jobboardwp' ),
-		'value'         => $location,
-		'required'      => true,
-		'conditional'   => [ 'jb-location-type', '=', '0' ],
+	    'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
+		
+		 'label'         => __( 'Location', 'jobboardwp' ),
+		 'description'   => __( 'Required for onsite jobs.', 'jobboardwp' ),
+		 'value'         => $location,
+		 'required'      => true,
+		 'conditional'   => [ 'jb-location-type', '=', '0' ],
 		'value_data'    => $job_location_data,
 	],
 	[

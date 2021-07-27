@@ -23,6 +23,13 @@ if ( ! empty( $jb_job_info['job_id'] ) ) {
 				<?php echo JB()->common()->job()->display_types( $job_id ); ?>
 			</div>
 		</div>
+
+		<!-- display scholarship amount -->
+		<div class="jb-job-info-row jb-job-info-row-second">
+			<div class="jb-job-types">
+				<?php echo JB()->common()->job()->display_types( $job_id ); ?>
+			</div>
+		</div>
 	</div>
 
 <?php }

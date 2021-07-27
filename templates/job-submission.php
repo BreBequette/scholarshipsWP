@@ -27,6 +27,12 @@
 			$types_options[ $type->term_id ] = $type->name;
 		}
 
+
+		$states_options = array(
+			"Missouri" => "Missouri",
+			"Illinois" => "Illinois"
+		);
+
 		$categories_options = [];
 		if ( JB()->options()->get( 'job-categories' ) ) {
 			$categories = get_terms( [
@@ -40,6 +46,7 @@
 		}
 
 		$job_title = '';
+		$amount = '';
 		$job_location_type = '0';
 		$job_location = '';
 		$job_location_data = '';
@@ -72,6 +79,7 @@
 			$data = JB()->common()->job()->get_raw_data( $jb_job_submission['job']->ID );
 
 			$job_title = $data['title'];
+			$amount = $data['amount'];
 			$job_location_type = $data['location_type'];
 			$job_location = $data['location'];
 			$job_location_data = $data['location_data'];
@@ -238,20 +246,27 @@
 						'value'     => $job_title,
 					],
 					[
+                    	'type'      => 'text',
+                    	'label'     => __( 'Scholarship Amount', 'jobboardwp' ),
+                    	'id'        => 'amount',
+                    	'required'  => true,
+                    	'value'     => $amount,
+                    ],
+					[
 						'type'                  => 'conditional_radio',
 						'label'                 => __( 'Scholarship Location', 'jobboardwp' ),
 						'id'                    => 'job_location_type',
 						'options'               => [
-							'0' => __( 'Onsite', 'jobboardwp' ),
-							'1' => __( 'Remote', 'jobboardwp' ),
-							''  => __( 'Onsite or Remote', 'jobboardwp' ),
+							'0' => __( 'Local', 'jobboardwp' ),
+							'1' => __( 'State', 'jobboardwp' ),
+							''  => __( 'Federal', 'jobboardwp' ),
 						],
 						'condition_sections'    => [
 							'0' => [
 								[
 									'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
 									'label'         => __( 'Location', 'jobboardwp' ),
-									'placeholder'   => __( 'City, State, or Country', 'jobboardwp' ),
+									'placeholder'   => __( 'Zip Code', 'jobboardwp' ),
 									'name'          => 'job_location',
 									'id'            => 'job_location-0',
 									'value'         => $job_location,
@@ -261,26 +276,27 @@
 							],
 							'1' => [
 								[
-									'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
-									'label'         => __( 'Preferred Location', 'jobboardwp' ),
-									'placeholder'   => __( 'City, State, or Country', 'jobboardwp' ),
+									'type'          => 'select',
+									'label'         => __( 'State', 'jobboardwp' ),
 									'name'          => 'job_location',
 									'id'            => 'job_location-1',
+									'class'         => 'jb-s2',
+									'options' 	    => $states_options,
 									'value'         => $job_location,
 									'value_data'    => $job_location_data,
 								],
 							],
-							''  => [
-								[
-									'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
-									'label'         => __( 'Preferred Location', 'jobboardwp' ),
-									'placeholder'   => __( 'City, State, or Country', 'jobboardwp' ),
-									'name'          => 'job_location',
-									'id'            => 'job_location-',
-									'value'         => $job_location,
-									'value_data'    => $job_location_data,
-								],
-							],
+							// ''  => [
+							// 	[
+							// 		'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
+							// 		'label'         => __( 'Country', 'jobboardwp' ),
+							// 		'placeholder'   => __( 'City, State, or Country', 'jobboardwp' ),
+							// 		'name'          => 'job_location',
+							// 		'id'            => 'job_location-',
+							// 		'value'         => $job_location,
+							// 		'value_data'    => $job_location_data,
+							// 	],
+							// ],
 						],
 						'value'                 => $job_location_type,
 					],
