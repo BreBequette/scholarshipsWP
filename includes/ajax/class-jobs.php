@@ -420,12 +420,16 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 					$location = JB()->common()->job()->get_location( $job_post->ID, true );
 					$location_type = get_post_meta( $job_post->ID, 'jb-location-type', true );
 
-					if ( $location_type == '1' && empty( $location ) ) {
-						$formatted_location = __( 'Remote', 'jobboardwp' );
+					if ( $location_type == '2' && empty( $location ) ) {
+						$formatted_location = __( 'National', 'jobboardwp' );
 					} elseif ( empty( $location ) ) {
 						$formatted_location = __( 'Anywhere', 'jobboardwp' );
 					} else {
 						$formatted_location = $location;
+					}
+
+					if ( $location_type = '1') {
+						$formatted_location = __( 'National', 'jobboardwp' );
 					}
 
 					$data_types = [];

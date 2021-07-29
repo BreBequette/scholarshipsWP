@@ -259,7 +259,7 @@
 						'options'               => [
 							'0' => __( 'Local', 'jobboardwp' ),
 							'1' => __( 'State', 'jobboardwp' ),
-							''  => __( 'Federal', 'jobboardwp' ),
+							'2'  => __( 'National', 'jobboardwp' ),
 						],
 						'condition_sections'    => [
 							'0' => [

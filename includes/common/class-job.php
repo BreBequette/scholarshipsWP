@@ -157,6 +157,27 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 
 
 		/**
+		 * Returns the scholarship amount
+		 *
+		 * @param int $job_id Job post ID
+		 *
+		 * @return string
+		 *
+		 * @since 1.0
+		 */
+		function get_amount ( $job_id ) {
+			$amount = get_post_meta( $job_id, 'post_amount', true );
+			if ( empty( $amount ) ) {
+				return __( 'Amount not specified', 'jobboardwp' );
+			}
+
+		
+
+			return $amount;
+		}
+
+
+		/**
 		 * Returns the job expiry date.
 		 *
 		 * @param int $job_id Job post ID
@@ -261,9 +282,9 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 			$location_type = get_post_meta( $job_id, 'jb-location-type', true );
 
 			if ( $location_type == '1' && empty( $location ) ) {
-				return __( 'Remote', 'jobboardwp' );
+				return __( $job_location, 'jobboardwp' );
 			} elseif ( empty( $location ) ) {
-				return __( 'Anywhere', 'jobboardwp' );
+				return __( 'National', 'jobboardwp' );
 			}
 
 			return $location;

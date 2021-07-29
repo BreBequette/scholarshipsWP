@@ -44,6 +44,13 @@
 								</div>
 							<# } #>
 
+							<# if ( job.amount ) { #>
+								<div class="amount">
+									<i class="fa fa-usd"></i>
+									{{{job.amount}}}
+								</div>
+							<# } #>
+
 							<div class="jb-responsive jb-ui-s jb-ui-xs date" title="<?php esc_attr_e( 'Posted', 'jobboardwp' ) ?>">
 								<i class="far fa-calendar-alt"></i>
 								<?php _e( 'Posted', 'jobboardwp' ) ?> {{{job.date}}}

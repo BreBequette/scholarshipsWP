@@ -25,14 +25,7 @@
 
                     			if ( ! empty( $types ) ) { ?>
 
-                    				<label>
-                    					<select class="jb-job-type-filter">
-                    						<option value="" <?php selected( $job_type, '' ) ?>><?php esc_attr_e( 'Select scholarship type', 'jobboardwp' ); ?></option>
-                    						<?php foreach ( $types as $type ) { ?>
-                    							<option value="<?php echo esc_attr( $type->term_id ) ?>" <?php selected( $job_type, $type->term_id ) ?>><?php echo esc_html( $type->name ) ?></option>
-                    						<?php } ?>
-                    					</select>
-                    				</label>
+                    				
 
                     			<?php }
 				}
@@ -79,7 +72,7 @@
 
 		<div class="jb-jobs-header-row jb-jobs-filters-row">
 			<label>
-				<input type="checkbox" class="jb-only-remote" value="1" <?php checked( $is_remote ) ?> />&nbsp;<?php esc_attr_e( 'Show only remote scholarships', 'jobboardwp' ); ?>
+				<input type="checkbox" class="jb-only-remote" value="1" <?php checked( $is_remote ) ?> />&nbsp;<?php esc_attr_e( 'Show only federal scholarships', 'jobboardwp' ); ?>
 			</label>
 
 			<?php $types = get_terms( [

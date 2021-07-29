@@ -4,6 +4,7 @@ global $post_id;
 
 $gmap_key = JB()->options()->get( 'googlemaps-api-key' );
 
+$amount = '';
 $location = '';
 $app_contact = '';
 $company_name = '';
@@ -30,6 +31,7 @@ foreach ( $users_query as $user ) {
 if ( $post_id ) {
 	$location_type = get_post_meta( $post_id, 'jb-location-type', true );
 	$location = get_post_meta( $post_id, 'jb-location', true );
+	$amount = get_post_meta( $post_id, 'amount', true);
 
 	$job_location_data = JB()->common()->job()->get_location_data( $post_id );
 
@@ -64,7 +66,7 @@ $fields = apply_filters( 'jb_job-data', [
 		'value'         => $app_contact,
 	],
 	[
-		'id'            => 'jb-amount',
+		'id'            => 'amount',
 		'type'          => 'text',
 		'label'         => __( 'Scholarship amount', 'jobboardwp' ),
 		'description'   => __( 'Enter the amount', 'jobboardwp' ),
@@ -76,7 +78,7 @@ $fields = apply_filters( 'jb_job-data', [
 		'label'     => __( 'Location Type', 'jobboardwp' ),
 		'options'   => [
 			'0' => __( 'Onsite', 'jobboardwp' ),
-			'1' => __( 'Remote', 'jobboardwp' ),
+			'1' => __( 'National', 'jobboardwp' ),
 			''  => __( 'Onsite or remote', 'jobboardwp' ),
 		],
 		'value'     => $location_type,
