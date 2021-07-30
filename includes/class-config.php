@@ -103,7 +103,7 @@ if ( ! class_exists( 'jb\Config' ) ) {
 				'job-duration'                      => 30,
 				'required-job-type'                 => true,
 				'application-method'                => '',
-				'job-submitted-notice'              => __( 'Thank you for submitting your scholarship. It will be appear on the website once approved.', 'jobboardwp' ),
+				'job-submitted-notice'              => __( 'Thank you for submitting your scholarship. It will appear on the website once approved.', 'jobboardwp' ),
 
 				'disable-styles'                    => false,
 				'disable-fa-styles'                 => false,

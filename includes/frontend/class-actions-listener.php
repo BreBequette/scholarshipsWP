@@ -295,6 +295,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 						// handle job details fields
 						$title = '';
 						$content = '';
+						$amount = '';
 						$app_contact = '';
 						$company_name = '';
 
@@ -304,6 +305,16 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 							$title = sanitize_text_field( $_POST['job_title'] );
 							if ( empty( $title ) ) {
 								$posting_form->add_error( 'job_title', __( 'Scholarship title cannot be empty', 'jobboardwp' ) );
+							}
+						}
+
+						//add amount logic here
+						if ( empty( $_POST['amount'] ) ) {
+							$posting_form->add_error( 'amount', __( 'Scholarship amount cannot be empty', 'jobboardwp' ) );
+						} else {
+							$amount = sanitize_text_field( $_POST['amount'] );
+							if ( empty ( $amount ) ){
+								$posting_form->add_error( 'amount', __( 'Scholarship amount cannot be empty', 'jobboardwp' ) );
 							}
 						}
 
@@ -364,7 +375,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 							$location_type = sanitize_text_field( $_POST['job_location_type'] );
 							if ( $location_type === '0' ) {
 								if ( empty( $_POST['job_location'] ) ) {
-									$posting_form->add_error( 'job_location', __( 'Location for onsite scholarship is required', 'jobboardwp' ) );
+									$posting_form->add_error( 'job_location', __( 'Location for local scholarship is required', 'jobboardwp' ) );
 								} else {
 									$location = sanitize_text_field( $_POST['job_location'] );
 								}

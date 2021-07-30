@@ -371,7 +371,7 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 					'relation'  => 'AND',
 					[
 						'key'       => 'jb-location-type',
-						'value'     => '1',
+						'value'     => '2',
 						'compare'   => '=',
 					],
 				] );
@@ -420,17 +420,15 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 					$location = JB()->common()->job()->get_location( $job_post->ID, true );
 					$location_type = get_post_meta( $job_post->ID, 'jb-location-type', true );
 
-					if ( $location_type == '2' && empty( $location ) ) {
+					if ( $location_type == '1' ) {
+						$formatted_location = __( $location, 'jobboardwp' );
+					} elseif ($location_type == '2' || empty( $location )) {
 						$formatted_location = __( 'National', 'jobboardwp' );
-					} elseif ( empty( $location ) ) {
-						$formatted_location = __( 'Anywhere', 'jobboardwp' );
 					} else {
 						$formatted_location = $location;
 					}
 
-					if ( $location_type = '1') {
-						$formatted_location = __( 'National', 'jobboardwp' );
-					}
+				
 
 					$data_types = [];
 					$types = wp_get_post_terms( $job_post->ID, 'jb-job-type', [
@@ -618,6 +616,7 @@ if ( ! class_exists( 'jb\ajax\Jobs' ) ) {
 			return apply_filters( 'jb_job_dashboard_job_data_response', [
 				'id'            => $job_post->ID,
 				'title'         => $job_post->post_title,
+				'amount'		=> $job_post->post_amount,
 				'permalink'     => get_permalink( $job_post ),
 				'is_published'  => $job_post->post_status == 'publish',
 				'status_label'  => $status_label,

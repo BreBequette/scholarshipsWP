@@ -72,7 +72,7 @@
 
 		<div class="jb-jobs-header-row jb-jobs-filters-row">
 			<label>
-				<input type="checkbox" class="jb-only-remote" value="1" <?php checked( $is_remote ) ?> />&nbsp;<?php esc_attr_e( 'Show only federal scholarships', 'jobboardwp' ); ?>
+				<input type="checkbox" class="jb-only-remote" value="1" <?php checked( $is_remote ) ?> />&nbsp;<?php esc_attr_e( 'Show only national scholarships', 'jobboardwp' ); ?>
 			</label>
 
 			<?php $types = get_terms( [

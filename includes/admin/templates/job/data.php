@@ -77,9 +77,9 @@ $fields = apply_filters( 'jb_job-data', [
 		'type'      => 'select',
 		'label'     => __( 'Location Type', 'jobboardwp' ),
 		'options'   => [
-			'0' => __( 'Onsite', 'jobboardwp' ),
-			'1' => __( 'National', 'jobboardwp' ),
-			''  => __( 'Onsite or remote', 'jobboardwp' ),
+			'0' => __( 'Local', 'jobboardwp' ),
+			'1' => __( 'State', 'jobboardwp' ),
+			'2'  => __( 'National', 'jobboardwp' ),
 		],
 		'value'     => $location_type,
 		'size'      => 'small',

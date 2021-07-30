@@ -367,7 +367,7 @@ if ( ! class_exists( 'jb\admin\Columns' ) ) {
 							echo $location;
 							break;
 						}
-						case '': {
+						case '2': {
 							$location = JB()->common()->job()->get_location( $id );
 							echo $location;
 							break;

@@ -169,9 +169,7 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 			$amount = get_post_meta( $job_id, 'post_amount', true );
 			if ( empty( $amount ) ) {
 				return __( 'Amount not specified', 'jobboardwp' );
-			}
-
-		
+			} 
 
 			return $amount;
 		}
@@ -231,14 +229,15 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 			}
 
 			switch ( $location ) {
-				case '':
-					$location = __( 'Onsite or remote', 'jobboardwp' );
+				case '2':
+					$location = __( 'National', 'jobboardwp' );
 					break;
 				case '0':
-					$location = __( 'Onsite', 'jobboardwp' );
+					$location = __( 'Local', 'jobboardwp' );
 					break;
 				case '1':
-					$location = __( 'Remote', 'jobboardwp' );
+					//maybe logic for displaying state goes here?
+					$location = __( 'State', 'jobboardwp' );
 					break;
 			}
 
