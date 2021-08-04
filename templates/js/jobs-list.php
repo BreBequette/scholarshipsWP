@@ -65,6 +65,8 @@
 							<# } #>
 						</div>
 						<div class="jb-row-right-side">
+
+
 							<div class="date jb-responsive jb-ui-m jb-ui-l jb-ui-xl date" title="<?php esc_attr_e( 'Posted', 'jobboardwp' ) ?>">
 								{{{job.date}}}
 							</div>
@@ -80,6 +82,7 @@
 									</div>
 								<# } #>
 							<?php } ?>
+
 						</div>
 					</div>
 				</div>

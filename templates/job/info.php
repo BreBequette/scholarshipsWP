@@ -29,6 +29,10 @@ if ( ! empty( $jb_job_info['job_id'] ) ) {
 			<div class="jb-job-types">
 				<?php echo JB()->common()->job()->display_types( $job_id ); ?>
 			</div>
+
+			<div class="jb-job-categories">
+				<strong>Category:</strong> <?php echo JB()->common()->job()->display_categories( $job_id ); ?>
+			</div>
 		</div>
 
 		

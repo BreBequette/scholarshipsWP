@@ -60,7 +60,7 @@ if ( ! class_exists( 'jb\frontend\Shortcodes' ) ) {
 						case 'draft':
 						    // translators: %s: jobs dashboard page link
 							$posting_form->add_notice(
-								sprintf( __( 'Scholarship draft was saved. You can resumed it from the <a href="%s" title="Scholarship Dashboard">scholarship dashboard</a>', 'jobboardwp' ), $jobs_dashboard_link ),
+								sprintf( __( 'Scholarship draft was saved. You can resume it from the <a href="%s" title="Scholarship Dashboard">scholarship dashboard</a>', 'jobboardwp' ), $jobs_dashboard_link ),
 								'draft'
 							);
 

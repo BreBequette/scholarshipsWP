@@ -70,6 +70,41 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 			return ob_get_clean();
 		}
 
+		/**
+		 * Render job categories layout
+		 *
+		 * @param int $job_id
+		 *
+		 * @return string
+		 *
+		 * @since 1.0
+		 */
+		function display_categories( $job_id ) {
+
+			$categories = wp_get_post_terms( $job_id, 'jb-job-category', [
+				'orderby'   => 'name',
+				'order'     => 'ASC',
+			] );
+
+			if ( empty( $categories ) || is_wp_error( $categories ) ) {
+				return '';
+			}
+
+			ob_start();
+
+			foreach ( $categories as $category ) {
+				 ?>
+
+				<div class="jb-job-category" <?php echo $attr ?>>
+					<?php echo $category->name ?>
+				</div>
+
+			<?php }
+
+			return ob_get_clean();
+		}
+
+
 
 		/**
 		 * Calculates and returns the job expiry date.

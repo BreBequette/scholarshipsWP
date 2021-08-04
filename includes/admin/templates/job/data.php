@@ -31,7 +31,7 @@ foreach ( $users_query as $user ) {
 if ( $post_id ) {
 	$location_type = get_post_meta( $post_id, 'jb-location-type', true );
 	$location = get_post_meta( $post_id, 'jb-location', true );
-	$amount = get_post_meta( $post_id, 'amount', true);
+	$amount = get_post_meta( $post_id, 'jb-amount', true);
 
 	$job_location_data = JB()->common()->job()->get_location_data( $post_id );
 
@@ -66,7 +66,7 @@ $fields = apply_filters( 'jb_job-data', [
 		'value'         => $app_contact,
 	],
 	[
-		'id'            => 'amount',
+		'id'            => 'jb-amount',
 		'type'          => 'text',
 		'label'         => __( 'Scholarship amount', 'jobboardwp' ),
 		'description'   => __( 'Enter the amount', 'jobboardwp' ),
