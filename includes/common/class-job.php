@@ -201,7 +201,7 @@ if ( ! class_exists( 'jb\common\Job' ) ) {
 		 * @since 1.0
 		 */
 		function get_amount ( $job_id ) {
-			$amount = get_post_meta( $job_id, 'post_amount', true );
+			$amount = get_post_meta( $job_id, 'jb-amount', true );
 			if ( empty( $amount ) ) {
 				return __( 'Amount not specified', 'jobboardwp' );
 			} 

@@ -248,7 +248,7 @@
 					[
                     	'type'      => 'text',
                     	'label'     => __( 'Scholarship Amount', 'jobboardwp' ),
-                    	'id'        => 'amount',
+                    	'id'        => 'job_amount',
                     	'required'  => true,
                     	'value'     => $job_amount,
                     ],

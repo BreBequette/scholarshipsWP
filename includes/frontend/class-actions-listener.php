@@ -310,7 +310,7 @@ if ( ! class_exists( 'jb\frontend\Actions_Listener' ) ) {
 
 						//add amount logic here
 						if ( empty( $_POST['job_amount'] ) ) {
-							$posting_form->add_error( 'amount', __( 'Scholarship amount cannot be empty', 'jobboardwp' ) );
+							$posting_form->add_error( 'job_amount', __( 'Scholarship amount cannot be empty', 'jobboardwp' ) );
 						} else {
 							$amount = sanitize_text_field( $_POST['job_amount'] );
 							if ( empty ( $amount ) ){
