@@ -319,7 +319,7 @@
 					],
 					[
 						'type'      => 'wp_editor',
-						'label'     => __( 'Description', 'jobboardwp' ),
+						'label'     => __( 'Description and Eligibility Requirements', 'jobboardwp' ),
 						'id'        => 'job_description',
 						'value'     => $job_description,
 						'required'  => true,
