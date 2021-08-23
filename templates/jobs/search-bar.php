@@ -41,7 +41,7 @@
 
 					<label>
 						<span><?php _e( 'Find Scholarships:', 'jobboardwp' ); ?></span>
-						<input type="search" class="<?php echo esc_attr( implode( ' ', $classes ) ) ?>" placeholder="<?php esc_attr_e( 'City or State', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url2 ) ?>" aria-label="<?php esc_attr_e( 'Find Scholarships by location', 'jobboardwp' ) ?>" speech />
+						<input type="search" class="<?php echo esc_attr( implode( ' ', $classes ) ) ?>" placeholder="<?php esc_attr_e( 'State', 'jobboardwp' ) ?>" value="<?php echo esc_attr( $search_from_url2 ) ?>" aria-label="<?php esc_attr_e( 'Find Scholarships by location', 'jobboardwp' ) ?>" speech />
 						<?php if ( ! empty( $key ) ) {
 
 							$search_location_city = ! empty( $_GET['jb-location-search-city'] ) ? stripslashes( $_GET['jb-location-search-city'] ) : '';

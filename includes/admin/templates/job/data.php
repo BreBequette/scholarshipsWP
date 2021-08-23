@@ -4,7 +4,7 @@ global $post_id;
 
 $gmap_key = JB()->options()->get( 'googlemaps-api-key' );
 
-//$amount = '';
+$amount = '';
 $location = '';
 $app_contact = '';
 $company_name = '';
@@ -64,13 +64,13 @@ $fields = apply_filters( 'jb_job-data', [
 		'description'   => __( 'Email or URL is required for the "application" area.', 'jobboardwp' ),
 		'value'         => $app_contact,
 	],
-	// [
-	// 	'id'            => 'jb-amount',
-	// 	'type'          => 'text',
-	// 	'label'         => __( 'Scholarship amount', 'jobboardwp' ),
-	// 	'description'   => __( 'Enter the amount', 'jobboardwp' ),
-	// 	'value'         => $amount,
-	// ],
+	[
+		'id'            => 'jb-amount',
+		'type'          => 'text',
+		'label'         => __( 'Scholarship amount', 'jobboardwp' ),
+		'description'   => __( 'Enter the amount', 'jobboardwp' ),
+		'value'         => $amount,
+	],
 	[
 		'id'        => 'jb-location-type',
 		'type'      => 'select',
