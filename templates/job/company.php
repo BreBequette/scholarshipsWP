@@ -16,7 +16,7 @@ if ( ! empty( $jb_job_company['job_id'] ) ) {
 			<?php } ?>
 			<div class="jb-job-company-title-tagline">
 				<div class="jb-job-company-name">
-					<strong><?php echo $company['name'] ?></strong>
+					<strong>Company: <?php echo $company['name'] ?></strong>
 				</div>
 				<div class="jb-job-company-tagline">
 					<?php echo $company['tagline'] ?>

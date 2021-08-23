@@ -31,7 +31,7 @@ foreach ( $users_query as $user ) {
 if ( $post_id ) {
 	$location_type = get_post_meta( $post_id, 'jb-location-type', true );
 	$location = get_post_meta( $post_id, 'jb-location', true );
-
+	$amount = get_post_meta( $post_id, 'jb-amount', true );
 	$job_location_data = JB()->common()->job()->get_location_data( $post_id );
 
 	$app_contact = get_post_meta( $post_id, 'jb-application-contact', true );
