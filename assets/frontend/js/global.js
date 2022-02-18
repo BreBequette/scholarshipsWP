@@ -7,7 +7,7 @@ jQuery( document ).ready( function($) {
 
 		$(".jb-s2").select2({
 			allowClear: false,
-			placeholder: wp.i18n.__( 'Please select...', 'jobboardwp' )
+			placeholder: wp.i18n.__( '', 'jobboardwp' )
 		});
 	}
 

@@ -31,22 +31,17 @@
 							<# if ( job.company.name ) { #>
 								<div class="company">
 									<i class="far fa-building"></i>
+									<p>Company Name:&nbsp; </p>
 									<span title="{{{job.company.tagline}}}">
 										{{{job.company.name}}}
 									</span>
 								</div>
 							<# } #>
 
-							<# if ( job.location ) { #>
-								<div class="location">
-									<i class="fas fa-map-marker-alt"></i>
-									{{{job.location}}}
-								</div>
-							<# } #>
-
 							<# if ( job.amount ) { #>
 								<div class="amount">
 									<i class="fa fa-usd"></i>
+									<p>Amount:&nbsp; </p>
 									{{{job.amount}}}
 								</div>
 							<# } #>

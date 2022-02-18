@@ -195,7 +195,7 @@
 		$buttons = [
 			'job-preview' => [
 				'type'  => 'submit',
-				'label' => __( 'Preview', 'jobboardwp' ),
+				'label' => __( 'Next', 'jobboardwp' ),
 				'data'  => [
 					'action'    => 'preview',
 				],
@@ -253,68 +253,6 @@
                     	'value'     => $job_amount,
                     ],
 					[
-						'type'                  => 'conditional_radio',
-						'label'                 => __( 'Scholarship Location', 'jobboardwp' ),
-						'id'                    => 'job_location_type',
-						'options'               => [
-							'0' => __( 'Local', 'jobboardwp' ),
-							'1' => __( 'State', 'jobboardwp' ),
-							'2'  => __( 'National', 'jobboardwp' ),
-						],
-						'condition_sections'    => [
-							'0' => [
-								[
-									'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
-									'label'         => __( 'Location', 'jobboardwp' ),
-									'placeholder'   => __( 'City', 'jobboardwp' ),
-									'name'          => 'job_location',
-									'id'            => 'job_location-0',
-									'value'         => $job_location,
-									'value_data'    => $job_location_data,
-									'required'      => true,
-								],
-							],
-
-							'1' => [
-								[
-									'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
-									'label'         => __( 'Location', 'jobboardwp' ),
-									'placeholder'   => __( 'State', 'jobboardwp' ),
-									'name'          => 'job_location',
-									'id'            => 'job_location-0',
-									'value'         => $job_location,
-									'value_data'    => $job_location_data,
-									'required'      => true,
-								],
-							],
-
-							// '1' => [
-							// 	[
-							// 		'type'          => 'select',
-							// 		'label'         => __( 'State', 'jobboardwp' ),
-							// 		'name'          => 'job_location',
-							// 		'id'            => 'job_location-1',
-							// 		'class'         => 'jb-s2',
-							// 		'options' 	    => $states_options,
-							// 		'value'         => $job_location,
-							// 		'value_data'    => $job_location_data,
-							// 	],
-							// ],
-							// ''  => [
-							// 	[
-							// 		'type'          => empty( $gmap_key ) ? 'text' : 'location_autocomplete',
-							// 		'label'         => __( 'Country', 'jobboardwp' ),
-							// 		'placeholder'   => __( 'City, State, or Country', 'jobboardwp' ),
-							// 		'name'          => 'job_location',
-							// 		'id'            => 'job_location-',
-							// 		'value'         => $job_location,
-							// 		'value_data'    => $job_location_data,
-							// 	],
-							// ],
-						],
-						'value'                 => $job_location_type,
-					],
-					[
 						'type'      => 'select',
 						'label'     => __( 'Scholarship Type', 'jobboardwp' ),
 						'id'        => 'job_type',
@@ -322,6 +260,7 @@
 						'options'   => $types_options,
 						'value'     => $job_type,
 						'required'  => ! empty( JB()->options()->get( 'required-job-type' ) ) ? true : false,
+						'multiple'  => true;
 					],
 					[
 						'type'      => 'select',
@@ -330,6 +269,8 @@
 						'class'     => 'jb-s2',
 						'options'   => $categories_options,
 						'value'     => $job_category,
+						'multiple'  => true;
+						'required'  => true;
 					],
 					[
 						'type'      => 'wp_editor',

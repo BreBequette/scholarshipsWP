@@ -218,13 +218,13 @@ if ( ! class_exists( 'jb\common\CPT' ) ) {
 					'label_count'               => _n_noop( 'Expired <span class="count">(%s)</span>', 'Expired <span class="count">(%s)</span>', 'jobboardwp' ),
 				],
 				'jb-preview'    => [
-					'label'                     => _x( 'Preview', 'post status', 'jobboardwp' ),
+					'label'                     => _x( 'Next', 'post status', 'jobboardwp' ),
 					'public'                    => false,
 					'exclude_from_search'       => true,
 					'show_in_admin_all_list'    => false,
 					'show_in_admin_status_list' => true,
 					// translators: %s: posts count
-					'label_count'               => _n_noop( 'Preview <span class="count">(%s)</span>', 'Preview <span class="count">(%s)</span>', 'jobboardwp' ),
+					'label_count'               => _n_noop( 'Next <span class="count">(%s)</span>', 'Next <span class="count">(%s)</span>', 'jobboardwp' ),
 				],
 			];
 
